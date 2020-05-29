@@ -32,7 +32,7 @@ Learning_MRMs.py -i <input_file> -v <expert_value>
 Learning_MRMs -i examples/example.mp -r 5 -d 1 -a True -v 1.5 --getExperience_mode MAX
 ```
 ## Remark
-The code in pylstar is not from me.
+The code in pylstar is not from me, it is from https://github.com/gbossert/pylstar
 
 ## nrMDP and MRM file format
 The nrMDP and the MRM are described in a file structured as follow:

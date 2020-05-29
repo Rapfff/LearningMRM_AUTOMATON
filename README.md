@@ -44,7 +44,6 @@ If a pair isn't represented by any line the observation corresponding to this pa
 s0 a A
 ```
 In this case the pair $(s0,a)$ corresponds to the observation $A$. Suppose the action $b$ is available in $s0$, then the pair $(s0,b)$ corresponds to the observation 'null'.
-```
 
 ### Description of the MRM
 The MRM is a mealy machine where the input alphabet are the obseravtions and the output alphabet some rewards. Each line corresponds to a transition in this mealy machine as follow:

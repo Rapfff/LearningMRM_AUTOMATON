@@ -379,8 +379,8 @@ if __name__ == "__main__":
 																"default_cost=",
 																"expert_value=",
 																"steps_episode=",
-																"number_episodes",
-																"getExperience_mode"])
+																"number_episodes=",
+																"getExperience_mode="])
 	except getopt.GetoptError:
 		print(help_txt)
 		sys.exit(2)

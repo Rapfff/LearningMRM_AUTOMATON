@@ -1,7 +1,38 @@
 # LearningMRM
 
 ## Description
-Given a nrMDP and a MRM this framework will learn the MRM from the nrMDP and several experiments using the Angluin algorithm apply on mealy machine.
+Given a nrMDP and a MRM this framework will learn the MRM from the nrMDP and several experiments using the Angluin algorithm apply on mealy machine.  
+  
+## Prerequisites
+
+* [stormpy](https://moves-rwth.github.io/stormpy/)
+
+## Parameters
+
+* **map** : a file with the map representing the model. (a description of this format is given below. An example can be found in examples/example.mp)
+* **expert value** : the value given by the expert for the first check.
+* **default cost** : the cost for every move that doesn't bring any observation. (default: 1)
+* **reset cost** : the cost paid to reset the system. (default: 5)
+* **steps per episode** : number of steps for each episode of exploration during the second checks. (default: 5000)
+* **number of episodes** : number of episode of exploration during the second checks. (default: 5)
+* **getExperience mode** : mode of the experience function (MIN or MAX). (default: MIN)
+
+## Usage
+```
+Learning_MRMs.py -i <input_file> -v <expert_value>
+                [-r <reset_cost>]
+                [-d <default_cost>]
+                [--steps_episode <integer>]
+                [--number_episodes <integer>]
+                [--getExperience_mode <MIN|MAX>]
+```
+
+## Example
+```
+Learning_MRMs -i examples/example.mp -r 5 -d 1 -a True -v 1.5 --getExperience_mode MAX
+```
+## Remark
+The code in pylstar is not from me.
 
 ## nrMDP and MRM file format
 The nrMDP and the MRM are described in a file structured as follow:
@@ -55,35 +86,3 @@ Example:
 0 A 10 1
 ```
 In this case if the current state of the MRM is 0, if the agent observes A by moving in the nrMDP then he gets a reward of 10 and the MRM changes its current state to 1.
-  
-  
-## Prerequisites
-
-* [stormpy](https://moves-rwth.github.io/stormpy/)
-
-## Parameters
-
-* **map** : a file with the map representing the model.
-* **expert value** : the value given by the expert for the first check.
-* **default cost** : the cost for every move that doesn't bring any observation. (default: 1)
-* **reset cost** : the cost paid to reset the system. (default: 5)
-* **steps per episode** : number of steps for each episode of exploration during the second checks. (default: 5000)
-* **number of episodes** : number of episode of exploration during the second checks. (default: 5)
-* **getExperience mode** : mode of the experience function (MIN or MAX). (default: MIN)
-
-## Usage
-```
-Learning_MRMs.py -i <input_file> -v <expert_value>
-                [-r <reset_cost>]
-                [-d <default_cost>]
-                [--steps_episode <integer>]
-                [--number_episodes <integer>]
-                [--getExperience_mode <MIN|MAX>]
-```
-
-## Example
-```
-Learning_MRMs -i examples/example.mp -r 5 -d 1 -a True -v 1.5 --getExperience_mode MAX
-```
-## Remark
-The code in pylstar is not from me.
